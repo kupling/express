@@ -8,7 +8,10 @@ pipeline {
   stages {
     stage('build') {
       steps {
-        sh '''npm install
+        sh '''export NODE_DEBUG=sl
+export SL_LOG_LEVEL=debug
+
+npm install
 
 /home/ubuntu/node_modules/.bin/slnodejs build          \\
      --tokenfile /home/ubuntu/sltoken.txt              \\
@@ -22,7 +25,10 @@ pipeline {
 
     stage('test') {
       steps {
-        sh '''/home/ubuntu/node_modules/.bin/slnodejs                \\
+        sh '''export NODE_DEBUG=sl
+export SL_LOG_LEVEL=debug
+
+/home/ubuntu/node_modules/.bin/slnodejs                \\
      mocha                                             \\
      --tokenfile /home/ubuntu/sltoken.txt              \\
      --buildsessionidfile /home/ubuntu/buildSessionId  \\
