@@ -8,7 +8,7 @@ pipeline {
   stages {
     stage('build') {
       steps {
-        sh '''npm clean-install
+        sh '''npm install
 
 /home/ubuntu/node_modules/.bin/slnodejs build          \\
      --tokenfile /home/ubuntu/sltoken.txt              \\
