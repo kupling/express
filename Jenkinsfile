@@ -23,12 +23,13 @@ pipeline {
     stage('test') {
       steps {
         sh '''/home/ubuntu/node_modules/.bin/slnodejs                \\
-     mocha               \\
+     mocha                                             \\
      --tokenfile /home/ubuntu/sltoken.txt              \\
      --buildsessionidfile /home/ubuntu/buildSessionId  \\
      --teststage "test" --useslnode2                   \\
      --                                                \\
         --require test/support/env                     \\
+        --reporter spec                                \\
         --bail                                         \\
         --check-leaks test/ test/acceptance/'''
       }
