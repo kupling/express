@@ -26,7 +26,7 @@ pipeline {
      /home/ubuntu/node_modules/bin/mocha               \\
      --tokenfile /home/ubuntu/sltoken.txt              \\
      --buildsessionidfile /home/ubuntu/buildSessionId  \\
-     --teststage "test" --useslnode2                   \\
+     --teststage "test" --useslnode2 true              \\
      --                                                \\
         --require test/support/env                     \\
         --bail                                         \\
