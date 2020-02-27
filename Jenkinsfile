@@ -23,10 +23,10 @@ pipeline {
     stage('test') {
       steps {
         sh '''/home/ubuntu/node_modules/.bin/slnodejs                \\
-     /home/ubuntu/node_modules/bin/mocha               \\
+     mocha               \\
      --tokenfile /home/ubuntu/sltoken.txt              \\
      --buildsessionidfile /home/ubuntu/buildSessionId  \\
-     --teststage "test" --useslnode2 true              \\
+     --teststage "test" --useslnode2                   \\
      --                                                \\
         --require test/support/env                     \\
         --bail                                         \\
